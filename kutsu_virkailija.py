@@ -1,6 +1,6 @@
 import requests, json
 
-def get_primus_json_file(file, encode): #single-line json
+def get_primus_json_file(file, encode): #yksirivinen json-sanoma
     jsons = []
     with open(file, 'r', encoding = encode) as f:
         for line in f:
