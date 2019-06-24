@@ -28,7 +28,7 @@ if r.status_code == 201: #201 Created (Ticket Granting Ticket)
     if r.status_code == 200: #200 OK (service ticket)
 
         custom_headers['CasSecurityTicket'] = r.text
-        jsons_file = get_primus_json_file('C:\\Integraatiot\\eHOKS\\jobs\\eHOKS_kayttaja.json', 'utf-8-sig') #Microsoft UTF-8 variant
+        jsons_file = get_primus_json_file('C:\\polku_tiedostoon\\tiedosto.json', 'utf-8-sig') #Microsoft UTF-8 variant
 
         for entry in jsons_file:
             print(entry['sahkoposti'])
