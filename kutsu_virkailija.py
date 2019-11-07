@@ -31,8 +31,8 @@ if r.status_code == 201: #201 Created (Ticket Granting Ticket)
             r = requests.post(target_url + '/kayttooikeus-service/kutsu', entry.encode('utf-8'), headers = custom_headers)
             if r.status_code == 201:
                 print('kutsu lähetetty')
-            elif r.status_code == 400 and r.json()['message'] == 'kutsu_with_sahkoposti_already_sent':
-                print('kutsu on jo lähetetty')
+            else:
+                print('kutsun lähetyksestä saatiin viesti: {0}'.format(r.json()))
 
             r = requests.post(ticket_location, service_params)
             custom_headers['CasSecurityTicket'] = r.text
